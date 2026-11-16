@@ -85,6 +85,11 @@ Git связан с карточкой задачи, не с названием 
 | `examples/registry.example.json` | Реестр команды: роли, CLI, пути, модели, маршрут |
 | `examples/instructions/` | Шаблоны инструкций: общий AGENTS.md + личные yoda/vader/luke.md |
 | `examples/wrappers/` | Wrapper `a squad` для быстрого запуска (cmd + bash) |
+| `agents/` | Рабочие места команды: yoda/AGENT.md (Hermes), vader/AGENT.md (OpenCode), luke/AGENT.md (Codex) |
+| `plugins/` | Стартовый набор модов из коробки + порядок установки |
+| `projects/` | Правила изоляции проектов |
+| `skills/` | Скиллы: что есть из коробки, что доставить (дизайн, motion, браузер) |
+| `AUTHORS.md` | Авторы: Codex — SKILL.md, K.ai в ZCode — документация и публикация |
 | `screenshots/` | Скриншоты (только TUI) |
 | `index.html` | Одностраничная версия (GitHub Pages) |
 

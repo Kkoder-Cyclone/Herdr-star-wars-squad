@@ -85,6 +85,11 @@ More: [ARCHITECTURE.md](docs/ARCHITECTURE.md) · [SETUP.md](docs/SETUP.md) · [p
 | `examples/registry.example.json` | Team registry: roles, CLIs, paths, models, route |
 | `examples/instructions/` | Instruction templates: shared AGENTS.md + personal yoda/vader/luke.md |
 | `examples/wrappers/` | `a squad` wrapper examples (cmd + bash) |
+| `agents/` | Team workspaces: yoda/AGENT.md (Hermes), vader/AGENT.md (OpenCode), luke/AGENT.md (Codex) |
+| `plugins/` | Starter mod set + install order |
+| `projects/` | Project isolation rules |
+| `skills/` | Skills: what's built-in, what to add (design, motion, browser) |
+| `AUTHORS.md` | Authors: Codex — SKILL.md, K.ai in ZCode — docs and publishing |
 | `screenshots/` | Screenshots (TUI only) |
 | `index.html` | Single-page version (GitHub Pages) |
 
