@@ -84,7 +84,7 @@ Git связан с карточкой задачи, не с названием 
 | `docs/SETUP.md` | Пошаговая сборка команды в TUI со скриншотами |
 | `examples/registry.example.json` | Реестр команды: роли, CLI, пути, модели, маршрут |
 | `examples/instructions/` | Шаблоны инструкций: общий AGENTS.md + личные yoda/vader/luke.md |
-| `examples/wrappers/` | Wrapper `a squad` для быстрого запуска (cmd + bash) |
+| `examples/wrappers/` | Рабочие wrapper: a-squad.cmd, a-team.cmd, agent-run.cmd |
 | `agents/` | Рабочие места команды: yoda/AGENT.md (Hermes), vader/AGENT.md (OpenCode), luke/AGENT.md (Codex) |
 | `plugins/` | Стартовый набор модов из коробки + порядок установки |
 | `projects/` | Правила изоляции проектов |

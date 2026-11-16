@@ -46,7 +46,7 @@ herdr --version
 
 ## 5. Wrapper `a squad`
 
-Скопируй [examples/wrappers/a-squad.cmd](../examples/wrappers/a-squad.cmd) (Windows) и/или `a-squad.sh` (Bash). Логика:
+Скопируй [examples/wrappers/a-squad.cmd](../examples/wrappers/a-squad.cmd) (Windows) или `a-team.cmd` — команда Маяка. Логика (рабочая версия, v0.2):
 
 ```
 a squad all       # открыть workspace «Star Wars Squad», таб «Табло»,

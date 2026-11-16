@@ -84,7 +84,7 @@ More: [ARCHITECTURE.md](docs/ARCHITECTURE.md) · [SETUP.md](docs/SETUP.md) · [p
 | `docs/SETUP.md` | Step-by-step team assembly in TUI with screenshots |
 | `examples/registry.example.json` | Team registry: roles, CLIs, paths, models, route |
 | `examples/instructions/` | Instruction templates: shared AGENTS.md + personal yoda/vader/luke.md |
-| `examples/wrappers/` | `a squad` wrapper examples (cmd + bash) |
+| `examples/wrappers/` | Working wrappers: a-squad.cmd, a-team.cmd, agent-run.cmd |
 | `agents/` | Team workspaces: yoda/AGENT.md (Hermes), vader/AGENT.md (OpenCode), luke/AGENT.md (Codex) |
 | `plugins/` | Starter mod set + install order |
 | `projects/` | Project isolation rules |
