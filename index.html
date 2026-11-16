@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ru" data-zcode-design>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herdr Star Wars Squad — команда из трёх AI-агентов для Herdr TUI</title>
+<style>
+:root{
+  --bg:#0f1216; --surface:#12161c; --raised:#171c22; --fg:#f0f0f0; --muted:#8a9cb0;
+  --border:#2a323d; --accent:#ff5701; --ok:#57df9c; --warn:#ffb000;
+  --mono:"Cascadia Mono",Consolas,monospace;
+  --sans:"Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
+  margin:56px 0 20px;font-weight:600}
+code,pre{font-family:var(--mono)}
+code{background:var(--raised);border:1px solid var(--border);border-radius:6px;padding:2px 7px;font-size:.88em}
+pre{background:var(--surface);border:1px solid var(--border);border-radius:12px;
+  padding:18px 22px;overflow-x:auto;font-size:13.5px;line-height:1.7;margin:14px 0}
+pre .c{color:#57df9c}pre .o{color:#8a9cb0}pre .a{color:#ffb000}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+header{padding:64px 0 44px;border-bottom:1px solid var(--border);
+  background:linear-gradient(180deg,#12161c 0%,var(--bg) 100%)}
+.brand{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+h1{font-size:42px;font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.tagline{color:var(--muted);font-size:17px;max-width:62ch}
+.badges{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.badge{border:1px solid var(--border);border-radius:99px;padding:4px 14px;
+  font-family:var(--mono);font-size:12px;color:var(--muted)}
+.badge b{color:var(--fg);font-weight:600}
+.cta{display:flex;gap:14px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-block;border-radius:10px;padding:11px 22px;font-weight:600;font-size:14.5px}
+.btn.main{background:var(--accent);color:#16100d}
+.btn.ghost{border:1px solid var(--border);color:var(--fg)}
+.btn:hover{text-decoration:none;filter:brightness(1.08)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+.card h3{font-size:16.5px;font-weight:600;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14px}
+.card .num{font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
+th{text-align:left;color:var(--muted);font-weight:600;font-size:12px;letter-spacing:.06em;
+  text-transform:uppercase;padding:8px 12px;border-bottom:1px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+.shot{width:100%;border:1px solid var(--border);border-radius:12px;display:block;margin:16px 0}
+.cap{color:var(--muted);font-size:13px;margin:-8px 0 16px}
+.chain{font-family:var(--mono);font-size:13.5px;color:var(--fg);background:var(--surface);
+  border:1px solid var(--border);border-radius:12px;padding:16px 20px;overflow-x:auto;white-space:nowrap}
+.chain b{color:var(--ok)}
+footer{margin-top:64px;padding:28px 0 44px;border-top:1px solid var(--border);
+  color:var(--muted);font-size:13.5px}
+@media(max-width:860px){.grid2,.grid4{grid-template-columns:1fr}h1{font-size:32px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <h1>Star Wars Squad</h1>
+    </div>
+    <p class="tagline">Готовая команда из трёх AI-агентов для Herdr TUI: Йода (Hermes) ведёт цель и план, Вейдер (OpenCode) пишет код, Люк (Codex) проверяет. Каждый агент — отдельная вкладка; диспетчерская — вкладка «Табло». Собрано по скиллу <a href="https://github.com/Kkoder-Cyclone/Herdr-skill-setup">herdr-setup</a>.</p>
+    <div class="badges">
+      <span class="badge">stack <b>Herdr TUI</b></span>
+      <span class="badge">team <b>Йода · Вейдер · Люк</b></span>
+      <span class="badge">route <b>user → Yoda → Vader → Luke → user</b></span>
+      <span class="badge">license <b>MIT</b></span>
+    </div>
+    <div class="cta">
+      <a class="btn main" href="docs/SETUP.md">Сборка</a>
+      <a class="btn ghost" href="https://github.com/Kkoder-Cyclone/Herdr-star-wars-squad">GitHub</a>
+      <a class="btn ghost" href="docs/ARCHITECTURE.md">Архитектура</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <h2>Структура workspace</h2>
+  <img class="shot" src="screenshots/04-workspace-scheme.png" alt="Структура workspace Star Wars Squad">
+
+  <h2>Роли</h2>
+  <div class="grid2">
+    <div class="card"><span class="num">yoda · hermes</span><h3>Магистр Йода — руководитель</h3><p>Принимает цель, строит план и to-do, распределяет задания по канбану, принимает итог. Карточки канбана строятся из записей to-do — второй список не ведётся.</p></div>
+    <div class="card"><span class="num">vader · opencode</span><h3>Дарт Вейдер — разработчик</h3><p>Реализует назначенную часть в своей ветке: код, коммиты, тесты. Push только своей рабочей ветки, PR к основной. Force-push и обход проверок — вне цикла.</p></div>
+    <div class="card"><span class="num">luke · codex</span><h3>Люк Скайуокер — проверяющий</h3><p>Ревью diff, тестов и критерия готовности. Замечания — в карточку Вейдеру, одобрение — Йоде. Проверка чужими глазами: Люк ≠ исполнитель.</p></div>
+    <div class="card"><span class="num">tablo</span><h3>Табло — диспетчерская</h3><p>ЦЕЛЬ · ЭКИПАЖ LIVE · TO-DO · КАНБАН · БЛОКЕРЫ + нижний сплит ОФИС. Единственная вкладка, где видна вся команда.</p></div>
+  </div>
+
+  <h2>Маршрут и Git-цикл</h2>
+  <div class="chain">user → <b>Йода</b> → Вейдер → Люк → <b>Йода</b> → user</div>
+  <table>
+    <tr><th>Стадия канбана</th><th>Ответственный</th><th>Критерий перехода</th></tr>
+    <tr><td>К работе</td><td>Йода</td><td>цель, критерий готовности, исполнитель, рабочая ветка</td></tr>
+    <tr><td>В работе</td><td>Вейдер</td><td>ветка, коммиты, тесты; push ветки + PR к основной</td></tr>
+    <tr><td>На проверке</td><td>Люк</td><td>ревью diff и тестов; замечания или одобрение SHA</td></tr>
+    <tr><td>Готово</td><td>Йода</td><td>зелёные проверки, merge подтверждён, результат в карточке</td></tr>
+  </table>
+
+  <h2>Скриншоты</h2>
+  <img class="shot" src="screenshots/02-hc-ls-squad.png" alt="Команда в реестре агентов">
+  <img class="shot" src="screenshots/03-tablo-scheme.png" alt="Табло — схема диспетчерской">
+  <p class="cap">Только TUI: реальные выводы и схемы. GUI-оболочки не включены — ветка ждёт проверки.</p>
+
+  <h2>Быстрый старт</h2>
+  <div class="grid2">
+    <div class="card">
+      <span class="num">01</span><h3>Установи TUI</h3>
+      <pre><span class="c">PS C:\&gt;</span> irm https://herdr.dev/install.ps1 | iex
+<span class="c">PS C:\&gt;</span> herdr --version</pre>
+    </div>
+    <div class="card">
+      <span class="num">02</span><h3>Собери команду</h3>
+      <pre><span class="o"># вариант 1: скиллом herdr-setup</span>
+«Собери команду Star Wars Squad по скиллу herdr-setup»
+<span class="o"># вариант 2: руками по инструкции</span>
+docs/SETUP.md</pre>
+    </div>
+  </div>
+
+  <h2>Что внутри репозитория</h2>
+  <table>
+    <tr><th>Файл</th><th>Назначение</th></tr>
+    <tr><td><code>docs/ARCHITECTURE.md</code></td><td>Архитектура: слои, роли, Табло, режимы, Git-цикл, реестр</td></tr>
+    <tr><td><code>docs/SETUP.md</code></td><td>Пошаговая сборка со скриншотами</td></tr>
+    <tr><td><code>examples/registry.example.json</code></td><td>Реестр команды: роли, CLI, пути, маршрут</td></tr>
+    <tr><td><code>examples/instructions/</code></td><td>Шаблоны: AGENTS.md + yoda/vader/luke.md</td></tr>
+    <tr><td><code>examples/wrappers/</code></td><td>Wrapper a squad (cmd + bash)</td></tr>
+    <tr><td><code>screenshots/</code></td><td>Скриншоты (только TUI)</td></tr>
+  </table>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--fg)">Herdr Star Wars Squad</b> · MIT · Собрано по скиллу <a href="https://github.com/Kkoder-Cyclone/Herdr-skill-setup">herdr-setup</a>.</p>
+  </div>
+</footer>
+</body>
+</html>

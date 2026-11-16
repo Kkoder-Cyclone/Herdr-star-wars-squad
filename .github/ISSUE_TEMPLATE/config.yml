@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Вопрос по Herdr
+    url: https://herdr.dev/tui/docs/
+    about: Документация Herdr TUI — сначала проверь там.
+  - name: Готовые моды
+    url: https://herdr.dev/gallery/
+    about: Галерея макетов и модов сообщества.

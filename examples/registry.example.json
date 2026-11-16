@@ -1,0 +1,51 @@
+{
+  "workspace": "Star Wars Squad",
+  "tablo_tab": "Табло",
+  "route": "user -> yoda -> vader -> luke -> yoda -> user",
+  "members": [
+    {
+      "id": "yoda",
+      "name": "Магистр Йода",
+      "alias": "yoda",
+      "role": "руководитель",
+      "cli": "hermes",
+      "executable": "hermes.exe",
+      "argv": [],
+      "cwd": "<root>/agents/yoda",
+      "profile": "<hermes-profile>",
+      "instruction_paths": ["<root>/agents/instructions/AGENTS.md", "<root>/agents/instructions/yoda.md"],
+      "model": "по профилю Hermes",
+      "autostart": true
+    },
+    {
+      "id": "vader",
+      "name": "Дарт Вейдер",
+      "alias": "vader",
+      "role": "developer",
+      "cli": "opencode",
+      "executable": "opencode.exe",
+      "argv": [],
+      "npm": "@opencode/cli",
+      "cwd": "<root>/agents/vader",
+      "profile": "<opencode-config>",
+      "instruction_paths": ["<root>/agents/instructions/AGENTS.md", "<root>/agents/instructions/vader.md"],
+      "model": "по конфигу OpenCode",
+      "autostart": true
+    },
+    {
+      "id": "luke",
+      "name": "Люк Скайуокер",
+      "alias": "luke",
+      "role": "reviewer",
+      "cli": "codex",
+      "executable": "node",
+      "argv": ["codex.js"],
+      "npm": "@openai/codex",
+      "cwd": "<root>/agents/luke",
+      "profile": "~/.codex/config.toml",
+      "instruction_paths": ["<root>/agents/instructions/AGENTS.md", "<root>/agents/instructions/luke.md"],
+      "model": "по конфигу Codex",
+      "autostart": true
+    }
+  ]
+}
