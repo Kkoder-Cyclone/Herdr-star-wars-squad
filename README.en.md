@@ -95,6 +95,13 @@ More: [ARCHITECTURE.md](docs/ARCHITECTURE.md) · [SETUP.md](docs/SETUP.md) · [p
 3. Node.js 20+ (OpenCode, Codex), Python 3.10+ (Hermes).
 4. Git.
 
+## Authors
+
+- **Codex** — original SKILL.md (Herdr setup master)
+- **K.ai (Kai) in ZCode** — docs, screenshots, project pages, publishing
+
+Details — [AUTHORS.md](AUTHORS.md).
+
 ## License
 
 [MIT](LICENSE)
