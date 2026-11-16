@@ -4,6 +4,7 @@
 "use strict";
 const { execFileSync } = require("child_process");
 const path = require("path");
+const fs = require("fs");
 
 const WS_LABEL = "Star Wars Squad";
 const ROOT = process.env.SQUAD_ROOT || process.cwd(); // ili zaday put v etoj stroke
@@ -39,8 +40,14 @@ function agentsNow() {
   return map;
 }
 
-function raise(a, ws) {
-  const c = j(run(["tab", "create", "--workspace", ws, "--cwd", path.join(ROOT, a.dir)]));
+function raise(a, ws, cwdOverride) {
+  const cwd = cwdOverride || path.join(ROOT, a.dir);
+  if (cwdOverride) {
+    for (const f of ["AGENTS.md", "CLAUDE.md"]) {
+      try { fs.copyFileSync(path.join(ROOT, a.dir, f), path.join(cwdOverride, f)); } catch {}
+    }
+  }
+  const c = j(run(["tab", "create", "--workspace", ws, "--cwd", cwd]));
   const pane = c && c.result && c.result.root_pane ? c.result.root_pane.pane_id : null;
   if (!pane) { console.log("[squad] " + a.name + ": tab create NE udalsya"); return 1; }
   const s = j(run(["agent", "start", a.name, "--kind", a.kind, "--pane", pane, "--timeout", "90000"]));
