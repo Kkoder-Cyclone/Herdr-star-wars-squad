@@ -2,11 +2,12 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green) ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue) ![Herdr](https://img.shields.io/badge/herdr-TUI-orange) [🇷🇺 Русский](README.md)
 
-**Star Wars Squad** is a ready-made three-agent team for Herdr TUI, assembled per the [herdr-setup skill](https://github.com/Kkoder-Cyclone/Herdr-skill-setup):
+**Star Wars Squad** is a ready-made four-agent team for Herdr TUI, assembled per the [herdr-setup skill](https://github.com/Kkoder-Cyclone/Herdr-skill-setup):
 
 - **Yoda** (Hermes) — lead: takes the goal, builds the plan, routes tasks, accepts the result;
 - **Vader** (OpenCode) — developer: implements, verifies the build, hands off for review;
-- **Luke** (Codex) — reviewer: review, tests, defects, confirming fixes.
+- **Luke** (Codex) — reviewer: review, tests, defects, confirming fixes;
+- **R2D2** (DeepSeek Harness + Z.ai Coding Plan) — technical droid: automation, diagnostics, fact gathering; GLM 5.3 Flash by default, GLM 5.3 for heavy mode.
 
 Route: **user → Yoda → Vader → Luke → Yoda → user**.
 

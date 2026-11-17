@@ -2,11 +2,12 @@
 
 ![License](https://img.shields.io/badge/license-MIT-green) ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue) ![Herdr](https://img.shields.io/badge/herdr-TUI-orange) [🇬🇧 English](README.en.md)
 
-**Star Wars Squad** — готовая команда из трёх AI-агентов для Herdr TUI, собранная по скиллу [herdr-setup](https://github.com/Kkoder-Cyclone/Herdr-skill-setup):
+**Star Wars Squad** — готовая команда из четырёх AI-агентов для Herdr TUI, собранная по скиллу [herdr-setup](https://github.com/Kkoder-Cyclone/Herdr-skill-setup):
 
 - **Йода** (Hermes) — руководитель: принимает цель, составляет план, распределяет задания, принимает итог;
 - **Вейдер** (OpenCode) — разработчик: реализует, проверяет сборку, передаёт на проверку;
-- **Люк** (Codex) — проверяющий: ревью, тесты, дефекты, подтверждение исправлений.
+- **Люк** (Codex) — проверяющий: ревью, тесты, дефекты, подтверждение исправлений;
+- **R2D2** (DeepSeek Harness + Z.ai Coding Plan) — технический дроид: автоматизация, диагностика, сбор фактов; базово GLM 5.3 Flash, тяжёлый режим GLM 5.3.
 
 Маршрут работы: **пользователь → Йода → Вейдер → Люк → Йода → пользователь**.
 

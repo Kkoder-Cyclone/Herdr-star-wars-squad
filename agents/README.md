@@ -7,6 +7,7 @@ agents/
   yoda/AGENT.md    ← Hermes · руководитель
   vader/AGENT.md   ← OpenCode · разработчик
   luke/AGENT.md    ← Codex · проверяющий
+  r2d2/AGENT.md    ← dsh (DeepSeek Harness) · технический дроид
 ```
 
 ## Как поднять место агента
